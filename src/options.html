@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网申助手设置</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>网申填表助手 - 设置</h1>
+        </header>
+
+        <main>
+            <!-- 添加/编辑区域 -->
+            <section class="card editor-section">
+                <h2>添加/编辑条目</h2>
+                <form id="itemForm">
+                    <input type="hidden" id="editId">
+                    <div class="form-group">
+                        <label for="title">标题</label>
+                        <input type="text" id="title" placeholder="例如：手机号" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="group">分组 (可选)</label>
+                        <input type="text" id="group" list="groupList" placeholder="例如：个人信息">
+                        <datalist id="groupList">
+                            <!-- 动态填充现有分组 -->
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">内容</label>
+                        <textarea id="content" rows="4" placeholder="例如：13800138000" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="saveBtn" class="primary-btn">保存条目</button>
+                        <button type="button" id="cancelBtn" class="secondary-btn" style="display: none;">取消编辑</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 数据展示区域 -->
+            <section class="list-section">
+                <h2>我的信息库</h2>
+                <p class="hint">拖拽条目可调整顺序或修改分组。</p>
+                <div id="itemsContainer">
+                    <!-- 动态生成列表 -->
+                    <div class="empty-state">暂无数据，请在上方添加。</div>
+                </div>
+            </section>
+
+            <!-- 场景管理 -->
+            <section class="card scene-management">
+                <h3>场景管理</h3>
+                <p class="hint">您可以将当前的所有条目保存为一个“场景”（如：产品经理投递、程序员投递），以便快速切换。</p>
+                
+                <div class="scene-controls">
+                    <input type="text" id="newSceneName" placeholder="场景名称 (例如: 互联网大厂)">
+                    <button id="saveSceneBtn" class="primary-btn">保存当前列表为场景</button>
+                </div>
+
+                <h4>已存场景</h4>
+                <div id="sceneList" class="scene-list">
+                    <!-- 动态生成场景列表 -->
+                </div>
+            </section>
+            
+            <!-- 数据管理 (导入/导出) -->
+            <section class="card data-management">
+                <h3>数据备份</h3>
+                <div class="actions">
+                    <button id="exportBtn" class="secondary-btn">导出数据 (JSON)</button>
+                    <button id="importBtn" class="secondary-btn">导入数据...</button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;">
+                </div>
+                <p class="hint">如果您需要更换设备，请先导出数据，再在新设备上导入。</p>
+            </section>
+        </main>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

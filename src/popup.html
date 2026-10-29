@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网申助手</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-header">
+        <h1 class="logo">网申助手</h1>
+        <div class="header-actions">
+            <button id="detachWin" class="icon-btn" title="弹出独立窗口 (固定)">
+                ❐
+            </button>
+            <button id="openOptions" class="icon-btn" title="打开设置">
+                ⚙️
+            </button>
+        </div>
+    </div>
+    
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索...">
+    </div>
+
+    <div id="contentList" class="content-list">
+        <!-- 动态列表 -->
+    </div>
+    
+    <div id="toast" class="toast">已复制!</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

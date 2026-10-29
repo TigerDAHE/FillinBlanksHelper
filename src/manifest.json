@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "网申填表剪贴板助手",
+  "version": "1.0",
+  "description": "一个轻量级的剪贴板助手，预设常用信息，一键复制填写网申表格。",
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "网申填表助手"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
